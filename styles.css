@@ -1,0 +1,10 @@
+/* Apply styling to the images in the figure element */
+figure img {
+    max-width: 50%;
+    height: auto;
+}
+
+/* Style the second image differently */
+figure img:last-child {
+    max-width: 39.6%;
+}
