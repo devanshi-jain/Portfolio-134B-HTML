@@ -1,36 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="en" xmlns="http://www.w3.org/1998/Math/MathML">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is the portfolio website of Devanshi Jain, a mathematics and computer science undergraduate student at UC San Diego.">
     <title>Home | Devanshi Jain</title>
-  </head>
-  <body>
+</head>
+<body>
     <header>
-      <!-- Header content goes here -->
+        <h1>Welcome to My Portfolio</h1>
     </header>
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <!-- Include links to other pages -->
-      </ul>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="organizations.html">Organizations</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
     </nav>
     <main>
-      <section>
-        <h1>Hello! I am Devanshi Jain</h1>
-        <img src="portrait.jpg" alt="Devanshi Jain Portrait" width="1000" />
-        <p>
-          I am a 3rd-year undergraduate at UC San Diego studying mathematics and
-          computer science. I am interested in probabilistic reasoning in AI. 
-        </p>
-      </section>
+        <section>
+            <h1>About Me</h1>
+            <figure>
+                <img src="portrait.jpg" alt="Devanshi Jain Portrait" style="max-width: 100%; height: auto;">
+                <!-- <figcaption>Devanshi Jain</figcaption> -->
+            </figure>
+            <p>
+              I am a 3rd-year undergraduate at UC San Diego studying mathematics and computer science. I have 
+              a keen interest in probabilistic reasoning in the field of Artificial Intelligence. 
+            </p>
+            <p>
+            Here is Einstein's famous equation:
+              <math xmlns="http://www.w3.org/1998/Math/MathML">
+                  <mstyle displaystyle="true">
+                      <msup>
+                          <mi>E</mi>
+                      </msup>
+                      <mo>=</mo>
+                      <msup>
+                          <mi>m</mi>
+                      </msup>
+                      <mo>&#8290;</mo>
+                      <msup>
+                          <mi>c</mi>
+                          <mn>2</mn>
+                      </msup>
+                  </mstyle>
+              </math>
+            </p>
+            <p>MathML, despite being in the HTML specification for a long time, has only recently gained broader support. In 2008, 
+                Firefox started supporting it, and in 2012, Safari followed suit. However, it took even longer for Chrome and Edge to 
+                support MathML, which happened not until 2023! The delayed of MathML was was due to various factors, including the non-uniform browser 
+                compatibilities being the major factor, along with others like complexities of rendering math notation on the web. This includes the hefty task of 
+                that MathML has to support this across different browsers and versions.</p>
+        </section>
     </main>
     <aside>
-      <!-- Sidebar or additional content goes here -->
+        <!-- Sidebar or additional content goes here -->
     </aside>
     <footer>
-      <!-- Footer content goes here -->
+        <p>&copy; 2023 Devanshi Jain</p>
     </footer>
-  </body>
+</body>
 </html>
