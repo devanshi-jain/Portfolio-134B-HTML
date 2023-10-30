@@ -47,32 +47,14 @@
 
         <section>
             <h3>Meta Tags Experiment</h3>
-            <p>Use meta tags to provide additional information to search engines and social media websites:</p>
+            <p>These meta tags provide contact information for email, LinkedIn, and GitHub.</p>
             <meta name="contact.email" content="djain@ucsd.edu">
             <meta name="contact.linkedin" content="https://www.linkedin.com/in/djain18/">
             <meta name="contact.github" content="https://github.com/devanshi-jain">
-            <p>These meta tags provide contact information for email, LinkedIn, and GitHub.</p>
         </section>
 
-        <section>
-            <h3>Canvas Experiment</h3>
-            <canvas id="myCanvas" width="400" height="100"></canvas>
-            <script>
-                const canvas = document.getElementById('myCanvas');
-                const ctx = canvas.getContext('2d');
-                ctx.fillStyle = 'lightblue';
-                ctx.fillRect(0, 0, 400, 100);
-                ctx.font = '20px Arial';
-                ctx.fillStyle = 'black';
-                ctx.fillText('Light Blue is my favorite color', 50, 60);
-            </script>
-            <p>Here's a simple canvas experiment with text.</p>
-        </section>
         
-        <section>
-            <b><i>Using CSS for styling instead of  &lt;b&gt; and &lt;i&gt; tags improves accessibility by separating visual presentation from content structure, ensuring semantic meaning is retained. This benefits users with disabilities and allows for more precise styling control.</i></b>
-            <br><strong>The &lt;strong&gt; tag, when used thoughtfully, helps emphasize content without changing its structure. This promotes accessibility, ensuring important information is effectively conveyed to all users and assistive technologies.</strong>
-        </section>
+
 
         <section>
             <p>HTML elements and their counts:</p>
@@ -82,15 +64,84 @@
                 <li>link - Used to link to styles.css - Used only twice in about page</li>
                 <li>script - 7 lines of JS for canvas experiment above</li>
                 <li>h1, h2, h3, p - All used sequentially in the work page</li>
-                <li> canvas, b, i, strong, - Can all be seen on the lab page</li>
-                <li>div, svg, ul, li, img, em, a- Used in the work page</li>
+                <li> canvas, b, i, strong, code, pre, hr, iframe, audio, ol, template - Can all be seen on the lab page</li>
+                <li>div, svg, ul, li, img, em, a, col, colgroup- Used in the work page</li>
                 <li>a - used for Resume</li>
-                <li>form, label, input, text area, select, option, legend, button - contact page</li>
-                <li>span, figure, figcaption - Organizations page</li>
+                <li>form, label, input, text area, select, option, legend, button, optgroup, fieldset, datalist, details - contact page</li>
+                <li>audio, source, span, figure, figcaption, table, tr, td, th, caption - Organizations page</li>
 
- code, pre, hr, iframe, audio, video, source, ol, optgroup, label, fieldset, datalist, details, template, table, tr, td, th, caption, col, colgroup
             </ul>
         </section>
+        
+        
+        <template id="hiddenContent">
+            <h3>This content is hidden</h3>
+            <p>This content is inside a template element and is initially hidden until activated by JavaScript.</p>
+        </template>
+
+        <hr>
+        <section>
+            This section is primarily dedicated to all the tags that I didn't see a use of in my normal portfolio's pages:
+<ol>
+            <li>Here's some code from my class on numerical analysis utilizing both cod and pre tags:
+                 <pre><code>&lt;
+                    q = zeros(50, 1);
+                    for i = 1:num_trials
+                        A = randn(500);
+                        b = randn(500, 1);
+                        x = A\b;
+                        delta_b = 10^(-3) * randn(500, 1);
+                        x_tilde = A\(b + delta_b);
+                        rel_error_sol = norm(x_tilde - x, 1) / norm(x, 1);
+                        rel_error_b = norm(delta_b, 1) / norm(b, 1);
+                        q(i) = rel_error_sol / (cond(A, 1) * rel_error_b);
+                    end
+                    
+                    y = log10(q);
+                    plot(y);
+                    
+                    xlabel('Trial Number');
+                    ylabel('log_{10}(q)');
+                    title('Plot of log_{10}(q) for 50 Trials');
+                    
+                    grid on;
+                &gt;</code>
+                    </pre>
+                </li>
+                <li><iframe src="https://www.example.com"></iframe></li>
+                <li><audio controls>
+                    <source src="Mortimer Snipe_1f7804cb-5328-48a6-a3c9-e1a16b98a9a4.ogg" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                  </audio></li>
+
+                  <li>
+                    <!-- <section> -->
+                        <h3>Canvas Experiment</h3>
+                        <p>Here's a simple canvas experiment with text.</p>
+                        <canvas id="myCanvas" width="400" height="100"></canvas>
+                        <script>
+                            const canvas = document.getElementById('myCanvas');
+                            const ctx = canvas.getContext('2d');
+                            ctx.fillStyle = 'lightblue';
+                            ctx.fillRect(0, 0, 400, 100);
+                            ctx.font = '20px Arial';
+                            ctx.fillStyle = 'black';
+                            ctx.fillText('Light Blue is my favorite color', 50, 60);
+                        </script>
+                    <!-- </section> -->
+                  </li>
+
+                  <li>
+                            
+        <!-- <section> -->
+            <b><i>Using CSS for styling instead of  &lt;b&gt; and &lt;i&gt; tags improves accessibility by separating visual presentation from content structure, ensuring semantic meaning is retained. This benefits users with disabilities and allows for more precise styling control.</i></b></li>
+            
+            <li><br><strong>The &lt;strong&gt; tag, when used thoughtfully, helps emphasize content without changing its structure. This promotes accessibility, ensuring important information is effectively conveyed to all users and assistive technologies.</strong></li>
+                  
+</ol>
+        </section>
+        <hr>
+    
 
     </main>
     <aside>

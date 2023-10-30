@@ -53,13 +53,58 @@
                 </fieldset>
                 <label for="category">Select a Category:</label>
                 <select id="category" name="category">
-                    <option value="general">General Inquiry</option>
-                    <option value="support">Technical Support</option>
-                    <option value="feedback">Feedback</option>
+                    <optgroup label="Inquiries">
+                        <option value="general">General Inquiry</option>
+                    </optgroup>
+                    <optgroup label="Support">
+                        <option value="support">Technical Support</option>
+                    </optgroup>
+                    <optgroup label="Feedback">
+                        <option value="feedback">Feedback</option>
+                    </optgroup>
                 </select><br>
                 <button type="submit">Send</button>
             </form>
-        </section>        
+        </section>
+        <section>
+            <h2>Submit Feedback</h2>
+            <form action="submit-feedback.php" method="post">
+                <fieldset>
+                    <legend>Contact Information</legend>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required><br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required><br>
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject" required><br>
+                </fieldset>
+                <fieldset>
+                    <legend>Your Feedback</legend>
+                    <label for="feedback">Feedback:</label>
+                    <textarea id="feedback" name="feedback" rows="4" required></textarea><br>
+                </fieldset>
+                <details>
+                    <summary>Additional Options</summary>
+                    <label for="category">Select a Category:</label>
+                    <input type="text" id="category" name="category" list="category-options">
+                    <datalist id="category-options">
+                        <option value="General Inquiry">
+                        <option value="Technical Support">
+                        <option value="Feedback">
+                        <option value="Custom Category 1">
+                        <option value="Custom Category 2">
+                    </datalist><br>
+                    <label for="priority">Priority:</label>
+                    <select id="priority" name="priority">
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select><br>
+                </details>
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </section>
+                
         
     </main>
     <aside>
