@@ -3,44 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
     <title>Resume | Devanshi Jain</title>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
+    <header class = "header">
+        <a href="#" class="logo">Devanshi Jain</a>
+        
+        <input type="checkbox" id="toggle-menu" class="side-menu">
+        <label for="toggle-menu" class="hamb">
+            <i class="bx bx-menu"></i>
+        </label>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="work.html">Work</a>
+            <a href="organizations.html">Organizations</a>
+            <a href="resume.html" class="active">Resume</a>
+            <a href="contact.html">Contact</a>
+        </nav>
     </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="work.html">Work</a></li>
-            <li><a href="organizations.html">Organizations</a></li>
-            <li><a href="resume.html">Resume</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="labexperiments.html">Lab-Experiments</a></li>
-
-        </ul>
-    </nav>
     <main>
         <section>
-            <h1>Resume</h1>
-            <p>You can view my resume right here:
-            <a href="resume.pdf" target="_blank">Devanshi's Resume (2023)</a></p>
-            <embed src="resume.pdf" width="100%" height="1100" type="application/pdf">
+            <h1  class="sub-title">Resume</h1>
+            <a href="media/resume.pdf" class="btn btn2" target="_blank">
+                </i> Download Resume.pdf <i class='bx bx-download'></i>
+            </a>
+            <embed src="media/resume.pdf" width="100%" height="1100" type="application/pdf">
         </section>
     </main>
-    <aside>
-        <h4>Connect with Me</h4>
-        <a href="mailto:djain@ucsd.edu">
-            <img src="icons/gmail.svg" alt="C Programming" width="30" height="40">
-        </a><a href="https://www.linkedin.com/in/djain18/">
-            <img src="icons/LinkedIn.svg" alt="C Programming" width="30" height="40">
-        </a><a href="https://github.com/devanshi-jain">
-            <img src="icons/Github-Light.svg" alt="C Programming" width="30" height="40">
-        </a>
-    </aside>
-    <footer>
-        <p>&copy; 2023 Devanshi Jain</p>
+    <footer class="copyright">
+        <p>&copy; Devanshi.</p>
     </footer>
 </body>
 </html>

@@ -7,52 +7,59 @@
     <meta name="contact.email" content="djain@ucsd.edu">
     <meta name="contact.linkedin" content="https://www.linkedin.com/in/djain18/">
     <meta name="contact.github" content="https://github.com/devanshi-jain">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!-- Using Poppins Font as custom css font. -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
     <title>Home | Devanshi Jain</title>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="work.html">Work</a></li>
-            <li><a href="organizations.html">Organizations</a></li>
-            <li><a href="resume.html">Resume</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="labexperiments.html">Lab-Experiments</a></li>
-        </ul>
-    </nav>
-    <main>
-        <section>
-            <h2>Hello! I am Devanshi Jain</h2>
-            <picture>
-                <img src="portrait.jpg" alt="Devanshi Jain Portrait" style="max-width: 100%; height: auto;">
-            </picture>
-        </section>
-        <details>
-            <summary>
-                I am a 3rd-year undergraduate at UC San Diego studying mathematics and computer science. I have
-                a keen interest in probabilistic reasoning in the field of Artificial Intelligence. <br> I am working
-                to become a good software engineer to make products accessible to all. Currently, I am actively looking
-                for a software engineering internship for Summer 2024. 
-            </summary> 
-        </details>
+    <header class = "header">
+        <a href="#" class="logo">Devanshi Jain</a>
         
+        <input type="checkbox" id="toggle-menu" class="side-menu">
+        <label for="toggle-menu" class="hamb">
+            <i class="bx bx-menu"></i>
+        </label>
+        <nav class="navbar">
+            <a href="index.html" class="active">Home</a>
+            <a href="work.html">Work</a>
+            <a href="organizations.html">Organizations</a>
+            <a href="resume.html">Resume</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section class="home">
+            <div class="home-content">
+                <h1>Hi, I'm Devanshi</h1>
+                <h3>Software Engineer</h3>
+                <p>
+                    I am a 3rd-year student at UC San Diego studying Mathematics and Computer Science. I have
+                    a strong interest in probabilistic reasoning in the field of Artificial Intelligence. I am working
+                    to become a good software engineer to make products accessible to all. Currently, I am actively looking
+                    for a software engineering internship for Summer 2024. 
+                    <br>
+                    The repository for the code is :<a href = https://github.com/devanshi-jain/Portfolio-134B-HTML style="color: #e28743;"> https://github.com/devanshi-jain/Portfolio-134B-HTML</a>
+                <br>
+                    <div class="home-sci">
+                    <a href="https://github.com/devanshi-jain"><i class='bx bxl-github'></i></a>
+                    <a href="https://www.linkedin.com/in/djain18/"><i class='bx bxl-linkedin'></i></a>
+                    <a href="mailto:djain@ucsd.edu"><i class='bx bxl-gmail'></i></a>
+                </div>
+            </p>
+            </div>
+            <figure class="home-image">
+                <img src="img/fall.jpg" alt="Me Smiling" style="height: 100%; width: 200%;">
+            </figure>
+        </section>
     </main>
-    <aside>
-        <h4>Connect with Me</h4>
-        <a href="mailto:djain@ucsd.edu">
-            <img src="icons/gmail.svg" alt="C Programming" width="30" height="40">
-        </a><a href="https://www.linkedin.com/in/djain18/">
-            <img src="icons/LinkedIn.svg" alt="C Programming" width="30" height="40">
-        </a><a href="https://github.com/devanshi-jain">
-            <img src="icons/Github-Light.svg" alt="C Programming" width="30" height="40">
-        </a>
-    </aside>
-    <footer>
-        <p>&copy; 2023 Devanshi Jain</p>
+
+
+
+    <footer class="copyright">
+        <p>&copy; Devanshi.</p>
     </footer>
-</body>
+        <!-- <i class="fa-solid fa-monkey"></i> -->
+    </body>
 </html>

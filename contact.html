@@ -7,118 +7,54 @@
     <meta property="og:title" content="Contact Devanshi Jain">
     <meta property="og:description" content="Get in touch with me for inquiries and collaborations in mathematics and computer science.">
     <meta property="og:image" content="your-image-url.jpg">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
     <title>Contact | Devanshi Jain</title>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="work.html">Work</a></li>
-            <li><a href="organizations.html">Organizations</a></li>
-            <li><a href="resume.html">Resume</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="labexperiments.html">Lab-Experiments</a></li>
-        </ul>
-    </nav>
-    <main>
-        <section>
-            <h1>Contact Me</h1>
-            <p>Feel free to reach out to me through the following methods:</p>
-            <ul>
-                <li><a href="https://www.linkedin.com/in/djain18/">LinkedIn</a></li>
-                <li><a href="https://github.com/devanshi-jain">GitHub</a></li>
-                <li>Email: <a href="mailto:djain@ucsd.edu">djain@ucsd.edu</a></li>
-            </ul>
-        </section>
-        <section>
-            <h2>Get in Touch</h2>
-            <form action="mailto:djian@ucsd.edu" method="post" enctype="text/plain">
-                <fieldset>
-                    <legend>Contact Information</legend>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required><br>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required><br>
-                    <label for="subject">Subject:</label>
-                    <input type="text" id="subject" name="subject" required><br>
-                </fieldset>
-                <fieldset>
-                    <legend>Your Message</legend>
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="4" required></textarea><br>
-                </fieldset>
-                <label for="category">Select a Category:</label>
-                <select id="category" name="category">
-                    <optgroup label="Inquiries">
-                        <option value="general">General Inquiry</option>
-                    </optgroup>
-                    <optgroup label="Support">
-                        <option value="support">Technical Support</option>
-                    </optgroup>
-                    <optgroup label="Feedback">
-                        <option value="feedback">Feedback</option>
-                    </optgroup>
-                </select><br>
-                <button type="submit">Send</button>
-            </form>
-        </section>
-        <section>
-            <h2>Submit Feedback</h2>
-            <form action="submit-feedback.php" method="post">
-                <fieldset>
-                    <legend>Contact Information</legend>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required><br>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required><br>
-                    <label for="subject">Subject:</label>
-                    <input type="text" id="subject" name="subject" required><br>
-                </fieldset>
-                <fieldset>
-                    <legend>Your Feedback</legend>
-                    <label for="feedback">Feedback:</label>
-                    <textarea id="feedback" name="feedback" rows="4" required></textarea><br>
-                </fieldset>
-                <details>
-                    <summary>Additional Options</summary>
-                    <label for="category">Select a Category:</label>
-                    <input type="text" id="category" name="category" list="category-options">
-                    <datalist id="category-options">
-                        <option value="General Inquiry">
-                        <option value="Technical Support">
-                        <option value="Feedback">
-                        <option value="Custom Category 1">
-                        <option value="Custom Category 2">
-                    </datalist><br>
-                    <label for="priority">Priority:</label>
-                    <select id="priority" name="priority">
-                        <option value="high">High</option>
-                        <option value="medium">Medium</option>
-                        <option value="low">Low</option>
-                    </select><br>
-                </details>
-                <button type="submit">Submit Feedback</button>
-            </form>
-        </section>
-                
+    <header class = "header">
+        <a href="#" class="logo">Devanshi Jain</a>
         
+        <input type="checkbox" id="toggle-menu" class="side-menu">
+        <label for="toggle-menu" class="hamb">
+            <i class="bx bx-menu"></i>
+        </label>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="work.html">Work</a>
+            <a href="organizations.html">Organizations</a>
+            <a href="resume.html">Resume</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <div class="contact-container">
+        <section class="contact-heading-left">
+            <h1 class="sub-title">Contact Me</h1>
+            <p>
+                <i class='bx bxs-paper-plane'></i>djain@ucsd.edu
+            </p>
+                <div class="social-icons">
+                    <a href="https://github.com/devanshi-jain"><i class='bx bxl-github'></i></a>
+                    <a href="https://www.linkedin.com/in/djain18/"><i class='bx bxl-linkedin'></i></a>
+                    <a href="mailto:djain@ucsd.edu"><i class='bx bxl-gmail'></i></a>
+                </div>
+        </section>
+
+        <section class="contact-form-right">
+            <form>
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="Email" placeholder="Your Email" required>
+                <textarea name = "Message" rows="6" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn btn2">Send</button>
+            </form>
+        </section>  
+    </div>             
     </main>
-    <aside>
-        <h4>Connect with Me</h4>
-        <a href="mailto:djain@ucsd.edu">
-            <img src="icons/gmail.svg" alt="C Programming" width="30" height="40">
-        </a><a href="https://www.linkedin.com/in/djain18/">
-            <img src="icons/LinkedIn.svg" alt="C Programming" width="30" height="40">
-        </a><a href="https://github.com/devanshi-jain">
-            <img src="icons/Github-Light.svg" alt="C Programming" width="30" height="40">
-        </a>
-    </aside>
-    <footer>
-        <p>&copy; 2023 Devanshi Jain</p>
-    </footer>
+
+<footer class="copyright">
+    <p>&copy; Devanshi.</p>
+</footer>
 </body>
 </html>
