@@ -12,7 +12,7 @@
 
 /* Apply the CSS variable to the input field */
 form input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 30px var(--autofill-background, #e1dfdf) inset !important;
+    -webkit-box-shadow: 0 0 30px 0 var(--autofill-background, #e1dfdf) inset !important;
     -webkit-text-fill-color: #272525 !important;
 }
 
@@ -113,7 +113,7 @@ body {
 }
 
 .home {
-    height: 80vh;
+    height: 110vh;
     display: flex;
     align-items: center;
     /* padding: 0 10%; */
@@ -204,7 +204,7 @@ body {
     position: relative;
     bottom: 40px;
     width: 170px;
-    height: 300px;
+    height: 200px;
     display: flex;
     justify-content: space-between;
 }
@@ -625,7 +625,8 @@ form input, form textarea{
     }
 
     .header {
-        padding: 3dvh 5%; 
+        padding: 3dvh 5%;
+    }
         /* 20px */
 
 }
