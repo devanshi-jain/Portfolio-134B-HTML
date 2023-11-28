@@ -38,6 +38,10 @@
             content: "";
         }
     </style>
+
+        <!-- Add this script to your HTML document -->
+
+
 </head>
 <body>
     <header class = "header">
@@ -84,41 +88,34 @@
                     name="Name8" 
                     placeholder="Name*" 
                     label for="Name" 
-                    required pattern="[A-Za-z\s]+" 
                     title="Please enter a valid name (letters and spaces only)" 
                     required />
-                <span class="validity"></span>
                 <output name="name_errors"></output>
                 <output name="name_information"></output>
 
+                <!-- <label for="mail">Email*</label> -->
                 <input 
                     type="email" 
                     id="email" 
                     name="Email" 
                     placeholder="Email*" 
                     required />
-                <span class="validity"></span>
                 <output name="email_errors"></output>
                 <output name="email_information"></output>
 
-                <input 
-                    type="text" 
+                <textarea 
                     id="Comments"
                     name = "Comments" 
                     required
                     placeholder="Message*" 
+                    data-placeholder="Message*"
                     size="3000" 
-                    maxlength="1000"
-                    minlength="4"
-                    pattern="[A-Za-z0-9\s.,!?':;()]+"
-                    title="Please enter a valid message (>4 to <1000 characters) along with only allowed characters: .,!?':;()" />
-                <span class="validity"></span>
+                    title="Please enter a valid message (at least 4 and at most 1000 characters) along with only allowed characters: .,!?':;()"></textarea>                
                 <output name="comments_errors"></output>
                 <output name="comments_information"></output>
-                
                 <button type="submit">Send<i class='bx bx-mail-send' ></i></button>
-                <!-- two <output> elements one for errors and one for information -->
-
+                <p>0/1000</p>
+                <button type="button" id="simulateSubmit">Simulate Submit</button>
             </form>
         </section>  
     </div>             
@@ -127,5 +124,236 @@
 <footer class="copyright">
     <p>&copy; Devanshi.</p>
 </footer>
+
+<!-- <script>document.addEventListener('DOMContentLoaded', function () {
+    // Array to capture form errors
+    var formErrors = [];
+
+    // Function to handle field validation
+    function validateField(field, pattern, errorMessage) {
+        var validitySpan = field.nextElementSibling;
+        var outputErrors = field.form.querySelector('[name=' + field.name + '_errors]');
+
+        if (!field.checkValidity()) {
+            field.classList.add('invalid');
+            validitySpan.textContent = '✖';
+            validitySpan.style.color = 'red';
+            outputErrors.textContent = errorMessage;
+            formErrors.push({ field: field.name, error: errorMessage });
+        } else {
+            field.classList.remove('invalid');
+            validitySpan.textContent = '✓';
+            validitySpan.style.color = 'green';
+            outputErrors.textContent = '';
+            // Remove error from formErrors if it exists
+            formErrors = formErrors.filter(error => !(error.field === field.name));
+        }
+    }
+
+    // Function to handle character count and warn/error style for textarea
+    function handleCharacterCount(field, minLength, maxLength) {
+        var validitySpan = field.nextElementSibling;
+        var outputInformation = field.form.querySelector('[name=' + field.name + '_information]');
+
+        var currentLength = field.value.length;
+        var remainingCharacters = maxLength - currentLength;
+        outputInformation.textContent = remainingCharacters + ' characters remaining';
+
+        if (currentLength < minLength) {
+            outputInformation.style.color = 'red'; // Error style
+            formErrors.push({ field: field.name, error: 'Too short. Minimum ' + minLength + ' characters required' });
+        } else if (remainingCharacters < 0) {
+            outputInformation.style.color = 'red'; // Error style
+            formErrors.push({ field: field.name, error: 'Too long. Maximum ' + maxLength + ' characters allowed' });
+        } else if (remainingCharacters < maxLength * 0.2) {
+            outputInformation.style.color = 'orange'; // Warn style
+        } else {
+            outputInformation.style.color = 'inherit';
+            // Remove error from formErrors if it exists
+            formErrors = formErrors.filter(error => !(error.field === field.name && (error.error === 'Too short. Minimum ' + minLength + ' characters required' || error.error === 'Too long. Maximum ' + maxLength + ' characters allowed')));
+        }
+    }
+
+    // Attach event listeners for input fields
+var inputFields = document.querySelectorAll('input[type="text"], input[type="email"], textarea');
+inputFields.forEach(function (field) {
+    field.addEventListener('input', function () {
+        // Restore original placeholder value
+        if (field.getAttribute('data-placeholder')) {
+            field.setAttribute('placeholder', field.getAttribute('data-placeholder'));
+        }
+
+        // Validate Name field
+        if (field.id === 'name') {
+            var pattern = /[A-Za-z\s.]+/;
+            validateField(field, pattern, 'Invalid name. Only letters and spaces and full-stops allowed');
+        }
+
+        // Validate Email field
+        if (field.id === 'email') {
+            validateField(field, null, 'Invalid email');
+        }
+
+        // Validate Comments field
+        if (field.id === 'Comments') {
+            var pattern = /[A-Za-z0-9\s.,!?':;()]+/;
+            validateField(field, pattern, 'Invalid characters. Only allowed characters: .,!?\':;()');
+            
+            // Update character count
+            handleCharacterCount(field, 4, 1000);
+            
+            // Validate length requirement
+            if (field.value.length < 4) {
+                var validitySpan = field.nextElementSibling;
+                validitySpan.textContent = '✖';
+                validitySpan.style.color = 'red';
+                formErrors.push({ field: field.name, error: 'Too short. Minimum 4 characters required' });
+            }
+        }
+    });
+});
+
+
+    // Attach event listener for form submission
+    var form = document.querySelector('form');
+    form.addEventListener('submit', function (event) {
+        // Prevent form submission if there are errors
+        if (formErrors.length > 0) {
+            event.preventDefault();
+            // Encode formErrors in JSON format and add to form data
+            var formErrorsJSON = JSON.stringify(formErrors);
+            var formErrorsInput = document.createElement('input');
+            formErrorsInput.type = 'hidden';
+            formErrorsInput.name = 'form-errors';
+            formErrorsInput.value = formErrorsJSON;
+            form.appendChild(formErrorsInput);
+        }
+    });
+
+    // Simulate form submission button
+    var simulateSubmitButton = document.getElementById('simulateSubmit');
+    simulateSubmitButton.addEventListener('click', function () {
+        // Manually trigger the form submission
+        form.submit();
+    });
+});
+</script> -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    // Array to capture form errors
+    var formErrors = [];
+
+    // Function to handle field validation
+    function validateField(field, pattern, errorMessage) {
+        var validitySpan = field.nextElementSibling;
+
+        // Use the same element for errors and validation indicators
+        var outputElement = validitySpan;
+
+        if (!field.checkValidity()) {
+            field.classList.add('invalid');
+            validitySpan.textContent = '✖';
+            validitySpan.style.color = 'red';
+            outputElement.textContent = errorMessage;
+            formErrors.push({ field: field.name, error: errorMessage });
+        } else {
+            field.classList.remove('invalid');
+            validitySpan.textContent = '✓';
+            validitySpan.style.color = 'green';
+            outputElement.textContent = ''; // Clear any previous error messages
+            // Remove error from formErrors if it exists
+            formErrors = formErrors.filter(error => !(error.field === field.name));
+        }
+    }
+
+
+    // Function to handle character count and warn/error style for textarea
+    function handleCharacterCount(field, minLength, maxLength) {
+        var validitySpan = field.nextElementSibling;
+        var outputInformation = field.form.querySelector('[name=' + field.name + '_information]');
+
+        var currentLength = field.value.length;
+        var remainingCharacters = maxLength - currentLength;
+        outputInformation.textContent = remainingCharacters + ' characters remaining';
+
+        if (currentLength < minLength) {
+            outputInformation.style.color = 'red'; // Error style
+            formErrors.push({ field: field.name, error: 'Too short. Minimum ' + minLength + ' characters required' });
+        } else if (remainingCharacters < 0) {
+            outputInformation.style.color = 'red'; // Error style
+            formErrors.push({ field: field.name, error: 'Too long. Maximum ' + maxLength + ' characters allowed' });
+        } else if (remainingCharacters < maxLength * 0.2) {
+            outputInformation.style.color = 'orange'; // Warn style
+        } else {
+            outputInformation.style.color = 'inherit';
+            // Remove error from formErrors if it exists
+            formErrors = formErrors.filter(error => !(error.field === field.name && (error.error === 'Too short. Minimum ' + minLength + ' characters required' || error.error === 'Too long. Maximum ' + maxLength + ' characters allowed')));
+        }
+    }
+
+    // Attach event listeners for input fields
+    var inputFields = document.querySelectorAll('input[type="text"], input[type="email"], textarea');
+    inputFields.forEach(function (field) {
+        field.addEventListener('input', function () {
+            // Restore original placeholder value
+            if (field.getAttribute('data-placeholder')) {
+                field.setAttribute('placeholder', field.getAttribute('data-placeholder'));
+            }
+
+            // Validate Name field
+            if (field.id === 'name') {
+                var pattern = /[A-Za-z\s]+/;
+                validateField(field, pattern, 'Invalid name. Only letters and spaces and full-stops allowed');
+            }
+
+            // Validate Email field
+            if (field.id === 'email') {
+                validateField(field, null, 'Invalid email');
+            }
+
+            // Validate Comments field
+            if (field.id === 'Comments') {
+                var pattern = /[A-Za-z0-9\s.,!?':;()]+/;
+                validateField(field, pattern, 'Invalid characters. Only allowed characters: .,!?\':;()');
+                
+                // Update character count
+                handleCharacterCount(field, 4, 1000);
+                
+                // Validate length requirement
+                if (field.value.length < 4) {
+                    var validitySpan = field.nextElementSibling;
+                    validitySpan.textContent = '✖';
+                    validitySpan.style.color = 'red';
+                    formErrors.push({ field: field.name, error: 'Too short. Minimum 4 characters required' });
+                }
+            }
+        });
+    });
+
+    // Attach event listener for form submission
+    var form = document.querySelector('form');
+    form.addEventListener('submit', function (event) {
+        // Prevent form submission if there are errors
+        if (formErrors.length > 0) {
+            event.preventDefault();
+            // Encode formErrors in JSON format and add to form data
+            var formErrorsJSON = JSON.stringify(formErrors);
+            var formErrorsInput = document.createElement('input');
+            formErrorsInput.type = 'hidden';
+            formErrorsInput.name = 'form-errors';
+            formErrorsInput.value = formErrorsJSON;
+            form.appendChild(formErrorsInput);
+        }
+    });
+
+    // Simulate form submission button
+    var simulateSubmitButton = document.getElementById('simulateSubmit');
+    simulateSubmitButton.addEventListener('click', function () {
+        // Manually trigger the form submission
+        form.submit();
+    });
+});
+
+</script>
 </body>
 </html>
