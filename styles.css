@@ -7,6 +7,12 @@
     --black-color: #272523;
     --autofill-background: #e0dede; */
 
+    /* Dark Mode */
+    --bg-color: #081b29;
+    --orange-color: #00abf0;
+    --black-color: #ffffff;
+    --autofill-background: #e0dede; */
+
     /* Define a font-family variable with fallbacks */
     --font-family-poppins: 'Poppins', sans-serif;
 }
