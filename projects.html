@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
+    <title>Projects | Devanshi Jain</title>
+</head>
+<body>
+    <header class = "header">
+        <a href="#" class="logo">Devanshi Jain</a>
+        
+        <input type="checkbox" id="toggle-menu" class="side-menu">
+        <label for="toggle-menu" class="hamb">
+            <i class="bx bx-menu"></i>
+        </label>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="projects.html" class="active">Projects</a>
+            <a href="work.html">Work</a>
+            <a href="organizations.html">Organizations</a>
+            <a href="resume.html">Resume</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <main id="projects">
+        <h1 class="heading">PROJECTS</h1> <!-- Added underlined heading -->
+        <div class="job">
+            <div class="group relative z-[-1] flex flex-col items-center" style="opacity: 1; transform: none;">
+                <figure class="aspect-w-5 aspect-h-3 w-full">
+                    <img class="rounded-md object-cover w-full h-full" src="img/files.jpg" alt="Huffman Coding Project Image">
+                </figure>
+                <h2 class="mt-4 text-xl font-semibold">Huffman Coding Project</h2>
+                <p><em>Compression and decompression of text files</em></p>
+                <ul>
+                    <li>Robust implementation in C++</li>
+                    <li>Emphasis on lossless compression</li>
+                    <li>Exploration of fixed-length and variable-length encoding nuances</li>
+                    <li><a href="https://github.com/devanshi-jain/huffman_coding" target="_blank">GitHub Repository</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <footer class="copyright">
+        <p>&copy; Devanshi.</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var links = document.querySelectorAll('a[href^="#"]');
+            
+            links.forEach(function(link) {
+                link.addEventListener("click", function(e) {
+                    e.preventDefault();
+    
+                    var targetId = this.getAttribute("href").substring(1);
+                    var targetElement = document.getElementById(targetId);
+    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
