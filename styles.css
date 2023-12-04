@@ -5,18 +5,18 @@
     --orange-color: #e28743;
     --bg-color: #e0dede;
     --black-color: #272523;
-    --autofill-background: #e0dede; */
-
-    /* Dark Mode */
-    /* --bg-color: #081b29;
-    --orange-color: #00abf0;
-    --black-color: #ffffff;
-    --autofill-background: #e0dede; */ */
-
-    /* Define a font-family variable with fallbacks */
-    --font-family-poppins: 'Poppins', sans-serif;
+    --autofill-background: #e0dede; 
+    --font-family-poppins: 'Poppins', sans-serif;  /* Define a font-family variable with fallbacks */
 }
 
+.dark-theme{
+    /* Dark Mode */
+    --bg-color: #081b29;
+    --orange-color: #00abf0;
+    --black-color: #ffffff;
+    --autofill-background: #e0dede;    
+    --font-family-poppins: 'Poppins', sans-serif;
+}
 /* Apply the CSS variable to the input field */
 form input:-webkit-autofill,
 input:-webkit-autofill:hover, 
@@ -49,7 +49,7 @@ body {
     left: 0;
     width: 100%;
     padding: 20px 10%;
-    background: #e1dfdf;
+    background: var(--bg-color, #e0dede);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -59,7 +59,7 @@ body {
 .logo{
     position: relative;
     font-weight: 600;
-    color: #272525;
+    color: var(--black-color, #272523);
     text-decoration: none;
     font-size: 25px;
     text-transform: uppercase;
@@ -74,7 +74,7 @@ body {
     right: 0;
     width: 100%;
     height: 100%;
-    background: #e1dfdf;
+    background: var(--bg-color, #e0dede);
     transition: .3s;
     animation: showRight 1s ease forwards;
     animation-delay: .4s
@@ -94,7 +94,7 @@ body {
 .hamb-line {
     width: 30px;
     height: 3px;
-    background-color: #333; /* Adjust color */
+    background-color: var(--black-color, #272523); /* Adjust color */
     margin: 6px 0;
     transition: 0.4s;
 }
@@ -162,7 +162,7 @@ body {
     right: 0;
     width: 100%;
     height: 100%;
-    background: #e1dfdf;
+    background: var(--bg-color, #e0dede);
     transition: .3s;
     animation: showRight 1s ease forwards;
     animation-delay: 1s
@@ -182,7 +182,7 @@ body {
     right: 0;
     width: 100%;
     height: 100%;
-    background: #e1dfdf;
+    background: var(--bg-color, #e0dede);
     transition: .3s;
     animation: showRight 1s ease forwards;
     animation-delay: 1.3s
@@ -201,7 +201,7 @@ body {
     right: 0;
     width: 100%;
     height: 100%;
-    background: #e1dfdf;
+    background: var(--bg-color, #e0dede);
     transition: .3s;
     animation: showRight 1s ease forwards;
     animation-delay: 1.6s
@@ -212,7 +212,7 @@ body {
     justify-content: space-between;
     width: 345px;
     height: 50px;
-    background: #e1dfdf;
+    background: var(--bg-color, #e0dede);
 }
 
 .home-sci {
@@ -312,8 +312,6 @@ main {
     z-index: 1;
 }
 
-
-
 /* ABOUT */
 
 .about-image {
@@ -397,7 +395,7 @@ main {
 
 /* Style for the job company name */
 .job-company-name {
-    color: #e28743; /* Set text color */
+    color: var(--orange-color, #e28743); /* Set text color */
     font-size: 1.5em; /* Set font size */
     margin-bottom: 10px; /* Add space below the company name */
 }
@@ -643,7 +641,7 @@ textarea:invalid{
 
 @media (color-gamut: srgb){
     .btn.btn2 {
-        background: #e0dede;
+        background: var(--bg-color, #e0dede);
     }
 }
 
@@ -779,7 +777,7 @@ div.sums {
 .sums h4 {
     margin-top: 10px;
     font-style: italic;
-    color: #e28743; /* Orange color */
+    color: var(--orange-color, #e28743); /* Orange color */
 }
 
 .sums p {
