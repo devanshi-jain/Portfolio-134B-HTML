@@ -14,7 +14,7 @@
     --bg-color: #081b29;
     --orange-color: #00abf0;
     --black-color: #ffffff;
-    --autofill-background: #e0dede;    
+    --autofill-background: #081b29;    
     --font-family-poppins: 'Poppins', sans-serif;
 }
 /* Apply the CSS variable to the input field */
@@ -32,6 +32,34 @@ input:-webkit-autofill:active {
     padding: 0;
     box-sizing:border-box;
     font-family: var(--font-family-poppins, 'Poppins', sans-serif);
+}
+
+.custom-dropdown {
+    display: none;
+    position: absolute;
+    top: 40px; /* Adjust the top position as needed */
+    left: 0;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-dropdown label,
+.custom-dropdown input {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.custom-dropdown button {
+    background-color: #e28743;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.custom-dropdown.show {
+    display: block;
 }
 
 body {
@@ -78,6 +106,17 @@ body {
     transition: .3s;
     animation: showRight 1s ease forwards;
     animation-delay: .4s
+}
+
+.logo-rest{
+    position: relative;
+    font-weight: 600;
+    color: var(--black-color, #272523);
+    text-decoration: none;
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: .3s;
 }
 
 /* Hamburger menu styles */
