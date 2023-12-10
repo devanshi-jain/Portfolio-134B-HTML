@@ -126,7 +126,6 @@
 <footer class="copyright">
     <p>&copy; Devanshi.</p>
 </footer>
-
 <script>
     document.addEventListener('DOMContentLoaded', function () {
     // Array to capture form errors
@@ -139,7 +138,7 @@
         // Use the same element for errors and validation indicators
         var outputElement = validitySpan;
 
-        if (!field.checkValidity()) {
+        if (!field.checkValidity() || (pattern && !pattern.test(field.value))) {
             field.classList.add('invalid');
             validitySpan.textContent = '✖';
             validitySpan.style.color = 'red';
@@ -155,10 +154,8 @@
         }
     }
 
-
     // Function to handle character count and warn/error style for textarea
     function handleCharacterCount(field, minLength, maxLength) {
-        var validitySpan = field.nextElementSibling;
         var outputInformation = field.form.querySelector('[name=' + field.name + '_information]');
 
         var currentLength = field.value.length;
@@ -191,23 +188,24 @@
 
             // Validate Name field
             if (field.id === 'name') {
-                var pattern = /[A-Za-z\s]+/;
-                validateField(field, pattern, 'Invalid name. Only letters and spaces and full-stops allowed');
+                var pattern = /^[A-Za-z\s.]+$/; // Updated pattern to allow only letters, spaces, and full-stops
+                var errorMessage = 'Please enter a valid name. Only letters, spaces, and full-stops allowed.';
+                validateField(field, pattern, errorMessage);
             }
 
             // Validate Email field
             if (field.id === 'email') {
-                validateField(field, null, 'Invalid email');
+                validateField(field, /^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Please enter a valid email address.');
             }
 
             // Validate Comments field
             if (field.id === 'Comments') {
-                var pattern = /[A-Za-z0-9\s.,!?':;()]+/;
+                var pattern = /[A-Za-z\s.,!?':;()]+/;
                 validateField(field, pattern, 'Invalid characters. Only allowed characters: .,!?\':;()');
-                
+
                 // Update character count
                 handleCharacterCount(field, 4, 1000);
-                
+
                 // Validate length requirement
                 if (field.value.length < 4) {
                     var validitySpan = field.nextElementSibling;
@@ -235,6 +233,8 @@
         }
     });
 });
+
 </script>
+
 </body>
 </html>
