@@ -17,6 +17,25 @@
     --autofill-background: #081b29;    
     --font-family-poppins: 'Poppins', sans-serif;
 }
+
+/* Barbie Theme */
+.barbie-theme {
+    --orange-color: #e0218a;
+    --bg-color: #FFFFFF;
+    --black-color: #000000;
+    --autofill-background: #FFFFFF;
+    --font-family-poppins: 'Poppins', sans-serif;
+}
+
+/* Christmas Theme */
+.christmas-theme {
+    --orange-color: #bb010b;
+    --bg-color: #d5f2e3;
+    --black-color: #003e1f;
+    --autofill-background: #d5f2e3;
+    --font-family-poppins: 'Poppins', sans-serif;
+}
+
 /* Apply the CSS variable to the input field */
 form input:-webkit-autofill,
 input:-webkit-autofill:hover, 
@@ -61,7 +80,47 @@ input:-webkit-autofill:active {
 .custom-dropdown.show {
     display: block;
 }
+/* DARK LIGHT TOGGLE */
 
+.checkbox {
+    opacity: 0;
+    position: absolute;
+  }
+  
+  .checkbox-label {
+    background-color: var(--black-color);
+    width: 50px;
+    height: 26px;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .fa-moon {color: #f1c40f;}
+  
+  .fa-sun {color: #f39c12;}
+  
+  .checkbox-label .ball {
+    background-color: var(--bg-color, #e0dede);
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+  }
+  
+  .checkbox:checked + .checkbox-label .ball {
+    transform: translateX(24px);
+  }
+  
+
+  /* ///////////// */
 body {
     background: var(--bg-color, #e0dede);
     /* Fallback if var is not supported. */
