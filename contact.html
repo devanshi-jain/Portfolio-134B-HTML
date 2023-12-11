@@ -200,6 +200,115 @@
 
             // Validate Comments field
             if (field.id === 'Comments') {
+                var pattern = /^[A-Za-z0-9\s!@#$%^&*(){}[\];':",.?]+$/; // Updated pattern to allow specified characters
+                validateField(field, pattern, 'Invalid characters. Only allowed characters: A-Z, a-z, 0-9, spaces, !@#$%^&*(){}[];\'":,.?');
+
+                // Update character count
+                handleCharacterCount(field, 15, 1000);
+
+                // Validate length requirement
+                if (field.value.length < 15) {
+                    var validitySpan = field.nextElementSibling;
+                    validitySpan.textContent = '✖';
+                    validitySpan.style.color = 'red';
+                    formErrors.push({ field: field.name, error: 'Too short. Minimum 15 characters required' });
+                }
+            }
+        });
+    });
+
+    // Attach event listener for form submission
+    var form = document.querySelector('form');
+    form.addEventListener('submit', function (event) {
+        // Prevent form submission if there are errors
+        if (formErrors.length > 0) {
+            event.preventDefault();
+            // Encode formErrors in JSON format and add to form data
+            var formErrorsJSON = JSON.stringify(formErrors);
+            var formErrorsInput = document.createElement('input');
+            formErrorsInput.type = 'hidden';
+            formErrorsInput.name = 'form-errors';
+            formErrorsInput.value = formErrorsJSON;
+            form.appendChild(formErrorsInput);
+        }
+    });
+});
+
+</script>
+<!-- <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    // Array to capture form errors
+    var formErrors = [];
+
+    // Function to handle field validation
+    function validateField(field, pattern, errorMessage) {
+        var validitySpan = field.nextElementSibling;
+
+        // Use the same element for errors and validation indicators
+        var outputElement = validitySpan;
+
+        if (!field.checkValidity() || (pattern && !pattern.test(field.value))) {
+            field.classList.add('invalid');
+            validitySpan.textContent = '✖';
+            validitySpan.style.color = 'red';
+            outputElement.textContent = errorMessage;
+            formErrors.push({ field: field.name, error: errorMessage });
+        } else {
+            field.classList.remove('invalid');
+            validitySpan.textContent = '✓';
+            validitySpan.style.color = 'green';
+            outputElement.textContent = ''; // Clear any previous error messages
+            // Remove error from formErrors if it exists
+            formErrors = formErrors.filter(error => !(error.field === field.name));
+        }
+    }
+
+    // Function to handle character count and warn/error style for textarea
+    function handleCharacterCount(field, minLength, maxLength) {
+        var outputInformation = field.form.querySelector('[name=' + field.name + '_information]');
+
+        var currentLength = field.value.length;
+        var remainingCharacters = maxLength - currentLength;
+        outputInformation.textContent = remainingCharacters + ' characters remaining';
+
+        if (currentLength < minLength) {
+            outputInformation.style.color = 'red'; // Error style
+            formErrors.push({ field: field.name, error: 'Too short. Minimum ' + minLength + ' characters required' });
+        } else if (remainingCharacters < 0) {
+            outputInformation.style.color = 'red'; // Error style
+            formErrors.push({ field: field.name, error: 'Too long. Maximum ' + maxLength + ' characters allowed' });
+        } else if (remainingCharacters < maxLength * 0.2) {
+            outputInformation.style.color = 'orange'; // Warn style
+        } else {
+            outputInformation.style.color = 'inherit';
+            // Remove error from formErrors if it exists
+            formErrors = formErrors.filter(error => !(error.field === field.name && (error.error === 'Too short. Minimum ' + minLength + ' characters required' || error.error === 'Too long. Maximum ' + maxLength + ' characters allowed')));
+        }
+    }
+
+    // Attach event listeners for input fields
+    var inputFields = document.querySelectorAll('input[type="text"], input[type="email"], textarea');
+    inputFields.forEach(function (field) {
+        field.addEventListener('input', function () {
+            // Restore original placeholder value
+            if (field.getAttribute('data-placeholder')) {
+                field.setAttribute('placeholder', field.getAttribute('data-placeholder'));
+            }
+
+            // Validate Name field
+            if (field.id === 'name') {
+                var pattern = /^[A-Za-z\s.]+$/; // Updated pattern to allow only letters, spaces, and full-stops
+                var errorMessage = 'Please enter a valid name. Only letters, spaces, and full-stops allowed.';
+                validateField(field, pattern, errorMessage);
+            }
+
+            // Validate Email field
+            if (field.id === 'email') {
+                validateField(field, /^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Please enter a valid email address.');
+            }
+
+            // Validate Comments field
+            if (field.id === 'Comments') {
                 var pattern = /[A-Za-z\s.,!?':;()]+/;
                 validateField(field, pattern, 'Invalid characters. Only allowed characters: .,!?\':;()');
 
@@ -234,7 +343,7 @@
     });
 });
 
-</script>
+</script> -->
 
 </body>
 </html>
