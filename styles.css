@@ -719,6 +719,47 @@ main section video {
 footer {
     margin-top: 20px;
 }
+.footer-icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-icons a {
+    margin: 0 10px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: 2px solid var(--orange-color, #e28743);
+    border-radius: 50%;
+    font-size: 14px;
+    color: var(--orange-color, #e28743);
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.footer-icons a:hover {
+    color: #081b29;
+    transform: translateY(-3px);
+}
+
+.footer-icons a::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--orange-color, #e28743);
+    transition: .3s;
+}
+
+.footer-icons a:hover::before {
+    width: 100%;
+}
 
 /* CSS for small phone screens */
 @media only screen and (max-width: 767px) {
