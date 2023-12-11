@@ -24,7 +24,7 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
         transition: background-color 5000s;
         -webkit-box-shadow: 0 0 30px 0 var(--autofill-background, #e0dede) inset !important;
-        -webkit-text-fill-color: #272525 !important;
+        -webkit-text-fill-color: var(--black-color) !important;
 }
 
 * {
@@ -552,19 +552,8 @@ main {
 }
 
 .contact-form-right form button:hover {
-    background-color: #081b29;
-}
-
-/* Media query for responsiveness */
-@media screen and (max-width: 768px) {
-    .contact-container {
-        flex-direction: column;
-    }
-
-    .contact-heading-left,
-    .contact-form-right {
-        flex-basis: 100%;
-    }
+    background-color: var(--bg-color, #e0dede);
+    color: var(--orange-color, #e28743);
 }
 
 form input, form textarea{
@@ -580,25 +569,6 @@ form input, form textarea{
     border-radius: 6px;
 }
 
-/* 
-
-input:user-invalid + span::before {
-  content: "✖";
-  color: red;
-} */
-
-/* 
-input:invalid{
-    display: inline-block;
-    margin-top: 5px;
-  }
-
-textarea:invalid{
-  color: red; 
-  display: inline-block;
-  margin-top: 5px;
-} 
-  */
 .social-icons {
     margin-top: 10px;
     /* position: absolute; */
@@ -678,11 +648,6 @@ textarea:invalid{
     margin: 0 auto; /* Center horizontally */
 }
 
-@media (color-gamut: srgb){
-    .btn.btn2 {
-        background: var(--bg-color, #e0dede);
-    }
-}
 
 .btn.btn2 i {
     margin-right: 0.5rem;; /* Adjust icon spacing */
@@ -693,90 +658,6 @@ textarea:invalid{
     color: #ffffff;
 }
 
-
-/* Add a media query for smaller screens */
-@media screen and (max-width: 768px) {
-    body {
-        margin: 2% 5%; /* Fallback margin for smaller screens */
-    }
-
-    .header {
-        padding: 3dvh 5%;
-    }
-        /* 20px */
-
-}
-
-/*hamburger menu styling */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.menu-toggle span {
-    height: 3px;
-    width: 25px;
-    background: #272523;
-    margin: 5px 0;
-    display: block;
-    transition: 0.4s;
-}
-
-@media screen and (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
-    }
-    .navbar a:hover,
-    .navbar a.active{
-    color: var(--bg-color, #e0dede);;
-}
-
-    .header i{
-        display: block;
-        font-size: 25px;
-    } 
-
-    .side-menu:checked ~ nav {
-        display: block; /* Show navigation when checkbox is checked */
-    }
-
-    .hamb-line {
-        background-color: var(--bg-color, #e0dede); /* Change color for better visibility */
-    }
-    .navbar {
-        display: none;
-        flex-direction: column;
-        width: 200px;
-        height: 100vh;
-        position: fixed;
-        top: 0; /* Adjust this value based on your header height */
-        right: 0;
-        left: 0;
-        background: var(--orange-color, #e28743);
-        z-index: 1;
-        padding-top: 50px;
-        left: 5px;
-    }
-
-    .navbar a {
-        padding: 15px;
-        text-align: center;
-    }
-
-    .navbar a:hover {
-        background-color: var(--orange-color, #e28743);
-        color: var(--bg-color, #e0dede);
-    }
-
-    .navbar.show {
-        display: flex;
-    }
-}
-
-/* Add this to your styles.css file or within a <style> tag in your HTML */
-
-/* Add this to your styles.css file or within a <style> tag in your HTML */
 
 /* Style for the organizations section */
 main section {
@@ -843,7 +724,6 @@ footer {
 @media only screen and (max-width: 767px) {
     .home-content h1 {
         font-size: 30px;
-
     }
 
     main section {
@@ -856,6 +736,126 @@ footer {
 
     .sums figure {
         margin: auto;
+    }
+}
+
+/* Common styles for smaller screens (up to 768px) */
+@media screen and (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10% 5%; /* Adjust the padding as needed */
+    }
+
+    .contact-heading-left,
+    .contact-form-right {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .contact-heading-left h1 {
+        font-size: 36px;
+    }
+
+    .contact-heading-left p {
+        font-size: 16px;
+        margin-top: 15px;
+    }
+
+    .social-icons {
+        margin-top: 10px;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    form input,
+    form textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    .contact-form-right form button {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        background: var(--orange-color, #e28743);
+        z-index: 1;
+        padding-top: 50px;
+    }
+
+    body {
+        margin: 2% 5%;
+    }
+
+    .header {
+        padding: 3vh 5%;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+        color: var(--bg-color, #e0dede);
+    }
+
+    .header i {
+        display: block;
+        font-size: 25px;
+    }
+
+    .side-menu:checked ~ nav {
+        display: block;
+    }
+
+    .hamb-line {
+        background-color: var(--bg-color, #e0dede);
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        width: 200px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        background: var(--orange-color, #e28743);
+        z-index: 1;
+        padding-top: 50px;
+        left: 5px;
+    }
+
+    .navbar a {
+        padding: 15px;
+        text-align: center;
+    }
+
+    .navbar a:hover {
+        background-color: var(--orange-color, #e28743);
+        color: var(--bg-color, #e0dede);
+    }
+
+    .navbar.show {
+        display: flex;
+    }
+
+    /* Adjust the margin after social icons */
+    .social-icons {
+        margin-bottom: -200px; /* Adjust as needed */
     }
 }
 
