@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Your Website</title>
+</head>
+
+<body>
+
+    <div class="fullscreen-container">
+        <div id="all-pages"></div>
+    </div>
+
+    <script src="scroll-pages.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var pagesContainer = document.getElementById('all-pages');
+
+            function loadPage(pageNumber) {
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        if (xhr.status === 200) {
+                            pagesContainer.innerHTML = xhr.responseText;
+                            var s = new ScrollPages(pageNumber, 3, pagesContainer);
+                            s.init();
+                        } else {
+                            console.error('Failed to load page: ' + pageNumber);
+                        }
+                    }
+                };
+                xhr.open('GET', 'page' + pageNumber + '.html', true);
+                xhr.send();
+            }
+
+            // Initial load of the first page
+            loadPage(1);
+        });
+    </script>
+
+</body>
+
+</html>
