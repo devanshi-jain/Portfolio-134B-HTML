@@ -90,7 +90,6 @@
                     id="name"
                     name="Name8" 
                     placeholder="Name*" 
-                    label for="Name" 
                     title="Please enter a valid name (letters and spaces only)" 
                     required />
                 <output name="name_errors"></output>
@@ -107,7 +106,7 @@
                 <output name="email_information"></output>
 
                 <textarea 
-                    id="Comments"
+                    id="text"
                     name = "Comments" 
                     required
                     placeholder="Message*" 
@@ -117,7 +116,7 @@
                 <output name="comments_errors"></output>
                 <output name="comments_information"></output>
                 <button type="submit">Send<i class='bx bx-mail-send' ></i></button>
-                <p>0/1000</p>
+                <p><b><span id="character-count">0</span></b>/1000</p>
             </form>
         </section>  
     </div>             
@@ -233,6 +232,22 @@
         }
     });
 });
+
+// Get the #text element
+const textArea = document.querySelector('#text');
+
+// Get the #character-count element
+const characterCount = document.querySelector('#character-count');
+
+function getCharacterCount (field) {
+  return field.value.length;
+}
+
+function handleInput () {
+  characterCount.textContent = getCharacterCount(this);
+}
+
+textArea.addEventListener('input', handleInput);
 
 </script>
 <!-- <script>
