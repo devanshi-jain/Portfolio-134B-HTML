@@ -60,7 +60,7 @@
             <a href="contact.html" class="active">Contact</a>
         </nav>
         <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M20.742 13.045a8.088 8.088 0 0 1-2.077.271c-2.135 0-4.14-.83-5.646-2.336a8.025 8.025 0 0 1-2.064-7.723A1 1 0 0 0 9.73 2.034a10.014 10.014 0 0 0-4.489 2.582c-3.898 3.898-3.898 10.243 0 14.143a9.937 9.937 0 0 0 7.072 2.93 9.93 9.93 0 0 0 7.07-2.929 10.007 10.007 0 0 0 2.583-4.491 1.001 1.001 0 0 0-1.224-1.224zm-2.772 4.301a7.947 7.947 0 0 1-5.656 2.343 7.953 7.953 0 0 1-5.658-2.344c-3.118-3.119-3.118-8.195 0-11.314a7.923 7.923 0 0 1 2.06-1.483 10.027 10.027 0 0 0 2.89 7.848 9.972 9.972 0 0 0 7.848 2.891 8.036 8.036 0 0 1-1.484 2.059z"></path></svg>
-        <svg id="custom" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M13.4 2.096a10.08 10.08 0 0 0-8.937 3.331A10.054 10.054 0 0 0 2.096 13.4c.53 3.894 3.458 7.207 7.285 8.246a9.982 9.982 0 0 0 2.618.354l.142-.001a3.001 3.001 0 0 0 2.516-1.426 2.989 2.989 0 0 0 .153-2.879l-.199-.416a1.919 1.919 0 0 1 .094-1.912 2.004 2.004 0 0 1 2.576-.755l.412.197c.412.198.85.299 1.301.299A3.022 3.022 0 0 0 22 12.14a9.935 9.935 0 0 0-.353-2.76c-1.04-3.826-4.353-6.754-8.247-7.284zm5.158 10.909-.412-.197c-1.828-.878-4.07-.198-5.135 1.494-.738 1.176-.813 2.576-.204 3.842l.199.416a.983.983 0 0 1-.051.961.992.992 0 0 1-.844.479h-.112a8.061 8.061 0 0 1-2.095-.283c-3.063-.831-5.403-3.479-5.826-6.586-.321-2.355.352-4.623 1.893-6.389a8.002 8.002 0 0 1 7.16-2.664c3.107.423 5.755 2.764 6.586 5.826.198.73.293 1.474.282 2.207-.012.807-.845 1.183-1.441.894z"></path><circle cx="7.5" cy="14.5" r="1.5"></circle><circle cx="7.5" cy="10.5" r="1.5"></circle><circle cx="10.5" cy="7.5" r="1.5"></circle><circle cx="14.5" cy="7.5" r="1.5"></circle></svg>
+        <!-- <svg id="custom" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M13.4 2.096a10.08 10.08 0 0 0-8.937 3.331A10.054 10.054 0 0 0 2.096 13.4c.53 3.894 3.458 7.207 7.285 8.246a9.982 9.982 0 0 0 2.618.354l.142-.001a3.001 3.001 0 0 0 2.516-1.426 2.989 2.989 0 0 0 .153-2.879l-.199-.416a1.919 1.919 0 0 1 .094-1.912 2.004 2.004 0 0 1 2.576-.755l.412.197c.412.198.85.299 1.301.299A3.022 3.022 0 0 0 22 12.14a9.935 9.935 0 0 0-.353-2.76c-1.04-3.826-4.353-6.754-8.247-7.284zm5.158 10.909-.412-.197c-1.828-.878-4.07-.198-5.135 1.494-.738 1.176-.813 2.576-.204 3.842l.199.416a.983.983 0 0 1-.051.961.992.992 0 0 1-.844.479h-.112a8.061 8.061 0 0 1-2.095-.283c-3.063-.831-5.403-3.479-5.826-6.586-.321-2.355.352-4.623 1.893-6.389a8.002 8.002 0 0 1 7.16-2.664c3.107.423 5.755 2.764 6.586 5.826.198.73.293 1.474.282 2.207-.012.807-.845 1.183-1.441.894z"></path><circle cx="7.5" cy="14.5" r="1.5"></circle><circle cx="7.5" cy="10.5" r="1.5"></circle><circle cx="10.5" cy="7.5" r="1.5"></circle><circle cx="14.5" cy="7.5" r="1.5"></circle></svg> -->
     </header>
     <main>
         <div class="contact-container">
@@ -119,7 +119,8 @@
                 <button type="submit">Send<i class='bx bx-mail-send' ></i></button>
             </form>
         </section>  
-    </div>             
+    </div>  
+    
     </main>
 
     <footer class="copyright">
@@ -256,115 +257,7 @@ function handleInput () {
 textArea.addEventListener('input', handleInput);
 
 </script>
-<!-- <script>
-    document.addEventListener('DOMContentLoaded', function () {
-    // Array to capture form errors
-    var formErrors = [];
 
-    // Function to handle field validation
-    function validateField(field, pattern, errorMessage) {
-        var validitySpan = field.nextElementSibling;
-
-        // Use the same element for errors and validation indicators
-        var outputElement = validitySpan;
-
-        if (!field.checkValidity() || (pattern && !pattern.test(field.value))) {
-            field.classList.add('invalid');
-            validitySpan.textContent = '✖';
-            validitySpan.style.color = 'red';
-            outputElement.textContent = errorMessage;
-            formErrors.push({ field: field.name, error: errorMessage });
-        } else {
-            field.classList.remove('invalid');
-            validitySpan.textContent = '✓';
-            validitySpan.style.color = 'green';
-            outputElement.textContent = ''; // Clear any previous error messages
-            // Remove error from formErrors if it exists
-            formErrors = formErrors.filter(error => !(error.field === field.name));
-        }
-    }
-
-    // Function to handle character count and warn/error style for textarea
-    function handleCharacterCount(field, minLength, maxLength) {
-        var outputInformation = field.form.querySelector('[name=' + field.name + '_information]');
-
-        var currentLength = field.value.length;
-        var remainingCharacters = maxLength - currentLength;
-        outputInformation.textContent = remainingCharacters + ' characters remaining';
-
-        if (currentLength < minLength) {
-            outputInformation.style.color = 'red'; // Error style
-            formErrors.push({ field: field.name, error: 'Too short. Minimum ' + minLength + ' characters required' });
-        } else if (remainingCharacters < 0) {
-            outputInformation.style.color = 'red'; // Error style
-            formErrors.push({ field: field.name, error: 'Too long. Maximum ' + maxLength + ' characters allowed' });
-        } else if (remainingCharacters < maxLength * 0.2) {
-            outputInformation.style.color = 'orange'; // Warn style
-        } else {
-            outputInformation.style.color = 'inherit';
-            // Remove error from formErrors if it exists
-            formErrors = formErrors.filter(error => !(error.field === field.name && (error.error === 'Too short. Minimum ' + minLength + ' characters required' || error.error === 'Too long. Maximum ' + maxLength + ' characters allowed')));
-        }
-    }
-
-    // Attach event listeners for input fields
-    var inputFields = document.querySelectorAll('input[type="text"], input[type="email"], textarea');
-    inputFields.forEach(function (field) {
-        field.addEventListener('input', function () {
-            // Restore original placeholder value
-            if (field.getAttribute('data-placeholder')) {
-                field.setAttribute('placeholder', field.getAttribute('data-placeholder'));
-            }
-
-            // Validate Name field
-            if (field.id === 'name') {
-                var pattern = /^[A-Za-z\s.]+$/; // Updated pattern to allow only letters, spaces, and full-stops
-                var errorMessage = 'Please enter a valid name. Only letters, spaces, and full-stops allowed.';
-                validateField(field, pattern, errorMessage);
-            }
-
-            // Validate Email field
-            if (field.id === 'email') {
-                validateField(field, /^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Please enter a valid email address.');
-            }
-
-            // Validate Comments field
-            if (field.id === 'Comments') {
-                var pattern = /[A-Za-z\s.,!?':;()]+/;
-                validateField(field, pattern, 'Invalid characters. Only allowed characters: .,!?\':;()');
-
-                // Update character count
-                handleCharacterCount(field, 4, 1000);
-
-                // Validate length requirement
-                if (field.value.length < 4) {
-                    var validitySpan = field.nextElementSibling;
-                    validitySpan.textContent = '✖';
-                    validitySpan.style.color = 'red';
-                    formErrors.push({ field: field.name, error: 'Too short. Minimum 4 characters required' });
-                }
-            }
-        });
-    });
-
-    // Attach event listener for form submission
-    var form = document.querySelector('form');
-    form.addEventListener('submit', function (event) {
-        // Prevent form submission if there are errors
-        if (formErrors.length > 0) {
-            event.preventDefault();
-            // Encode formErrors in JSON format and add to form data
-            var formErrorsJSON = JSON.stringify(formErrors);
-            var formErrorsInput = document.createElement('input');
-            formErrorsInput.type = 'hidden';
-            formErrorsInput.name = 'form-errors';
-            formErrorsInput.value = formErrorsJSON;
-            form.appendChild(formErrorsInput);
-        }
-    });
-});
-
-</script> -->
 
 </body>
 </html>

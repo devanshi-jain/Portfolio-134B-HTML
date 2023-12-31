@@ -1,4 +1,4 @@
-// Implemetion reference: https://juejin.im/post/5aeef41cf265da0ba0630de0
+// Implementation reference: https://juejin.im/post/5aeef41cf265da0ba0630de0
 
 const helper = {
     getDelta(event) {
